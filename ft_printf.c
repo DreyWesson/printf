@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 15:14:27 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:23:49 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(void)
 	// printf("->%d\n",ft_printf("Hello %s", "world"));
 	// printf("->%d\n",printf("Hello %s", "world"));
 	// printf("->%d\n", ft_printf("Hello%%s"));
-	printf("->%d\n", ft_printf("hello %d", 23456));
+	printf("->%d\n", ft_printf("hello %d\n", 23456));
 	// ft_printf("hello%i\n", 42);
 	return (0);
 }
