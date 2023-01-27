@@ -6,12 +6,12 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:32:24 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:41:15 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-// TODO: 'uxX'
+
 int	ft_printf(const char *format, ...)
 {
 	int		i;
@@ -43,15 +43,9 @@ int	main(void)
 	int	i;
 
 	i = 42;
-	printf("->%d %p\n", ft_printf("%p\n", &i), &i);
 	return (0);
 }
-// printf("%d\n",ft_printf("hello %s\n","world"));
-// printf("%i\n", 2147483647);
-// printf("len = %d\n", printf("hel%co\n", 'l'));
-// printf("my len = %d\n", ft_printf("Hel%co\n", 'l'));
-// printf("->%d\n",ft_printf("Hello %s", "world"));
-// printf("->%d\n",printf("Hello %s", "world"));
-// printf("->%d\n", ft_printf("hello %d\n", 23456));
-// printf("->%d\n", ft_printf("%p\n", &i));
-// ft_printf("%p\n", &i);
+// printf("->%d %p\n", ft_printf("%p\n", &i), &i); // %p tester
+// printf("%d\n",ft_printf("hello %s\n","world")); //%s tester
+// printf("->%d\n", ft_printf("hello %d\n", 23456)); // %d/%i tester
+// printf("my len = %d\n", ft_printf("Hel%co\n", 'l')); // %c tester

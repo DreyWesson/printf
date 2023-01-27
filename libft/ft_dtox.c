@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:02:35 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:15:57 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:42:53 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ int	ft_dtox(unsigned long n)
 			ptr[j++] = 87 + rem;
 		n /= 16;
 	}
-		// while (ptr[j++])
-		// {
-		// 	printf("%c", ptr[j]);
-		// }
 	ft_strrev(ptr);
 	return (ft_putstr(ptr));
 }
