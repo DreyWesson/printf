@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   ft_converter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:02:20 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 19:17:36 by doduwole         ###   ########.fr       */
+/*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
+/*   Updated: 2023/01/27 19:19:18 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_int(va_list args)
+int	ft_converter(char val, va_list args)
 {
-	int			val;
-	const char	*ptr;
+	int	i;
 
-	val = va_arg(args, int);
-	ptr = (const char *)ft_itoa(val, 10);
-	return (ft_putstr((char *)ptr));
+	i = 0;
+	if (val == 'c')
+		i = convert_char(args);
+	if (val == 's')
+		i = convert_str(args);
+	if (val == 'i' || val == 'd')
+		i = convert_int(args);
+	if (val == 'p')
+		i = convert_ptr(args);
+	return (i);
 }

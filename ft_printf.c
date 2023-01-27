@@ -6,42 +6,20 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 15:23:49 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:32:24 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-			// if (val == 'p')
-			// if (val == 'u')
-			// if (val == 'x')
-			// if (val == 'X')
-int	ft_validator(char val, va_list args)
-{
-	int	i;
-
-	i = 0;
-	if (val == 'c')
-		i = convert_char(args);
-	if (val == 's')
-		i = convert_str(args);
-	if (val == 'i' || val == 'd')
-		i = convert_int(args);
-	return (i);
-}
-
-void	char_counter(int *ret, const char *c)
-{
-	ft_putchar(c);
-	*ret += 1;
-}
-
+// TODO: 'uxX'
 int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		ret;
 	va_list	args;
 
+	if (str_validator(format) <= 0)
+		return (-1);
 	i = -1;
 	ret = 0;
 	va_start(args, format);
@@ -50,25 +28,30 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[++i] == '%')
-				char_counter(&ret, &format[i]);
+				ret += ft_putchar(&format[i]);
 			else
-				ret += ft_validator(format[i], args);
+				ret += ft_converter(format[i], args);
 		}
 		else
-			char_counter(&ret, &format[i]);
+			ret += ft_putchar(&format[i]);
 	}
 	return (ret);
 }
 
 int	main(void)
 {
-	// printf("%i\n", 2147483647);
-	// printf("len = %d\n", printf("hel%co\n", 'l'));
-	// printf("my len = %d\n", ft_printf("Hel%co\n", 'l'));
-	// printf("->%d\n",ft_printf("Hello %s", "world"));
-	// printf("->%d\n",printf("Hello %s", "world"));
-	// printf("->%d\n", ft_printf("Hello%%s"));
-	printf("->%d\n", ft_printf("hello %d\n", 23456));
-	// ft_printf("hello%i\n", 42);
+	int	i;
+
+	i = 42;
+	printf("->%d %p\n", ft_printf("%p\n", &i), &i);
 	return (0);
 }
+// printf("%d\n",ft_printf("hello %s\n","world"));
+// printf("%i\n", 2147483647);
+// printf("len = %d\n", printf("hel%co\n", 'l'));
+// printf("my len = %d\n", ft_printf("Hel%co\n", 'l'));
+// printf("->%d\n",ft_printf("Hello %s", "world"));
+// printf("->%d\n",printf("Hello %s", "world"));
+// printf("->%d\n", ft_printf("hello %d\n", 23456));
+// printf("->%d\n", ft_printf("%p\n", &i));
+// ft_printf("%p\n", &i);

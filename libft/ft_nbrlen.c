@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:02:20 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 19:17:36 by doduwole         ###   ########.fr       */
+/*   Created: 2023/01/27 19:01:23 by doduwole          #+#    #+#             */
+/*   Updated: 2023/01/27 19:01:54 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_int(va_list args)
+int	ft_nbrlen(int n)
 {
-	int			val;
-	const char	*ptr;
+	int	i;
 
-	val = va_arg(args, int);
-	ptr = (const char *)ft_itoa(val, 10);
-	return (ft_putstr((char *)ptr));
+	i = 0;
+	if (n <= 0)
+		i = 1;
+	while (n)
+	{
+		n /= 10;
+		++i;
+	}
+	return (i);
 }

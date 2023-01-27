@@ -6,13 +6,13 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:18:45 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 13:41:46 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:11:22 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putchar(const char *c)
+int	ft_putchar(const char *c)
 {
-	write(1, c, 1);
+	return (write(1, c, 1));
 }

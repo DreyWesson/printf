@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   ft_dtox.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:02:20 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 19:17:36 by doduwole         ###   ########.fr       */
+/*   Created: 2023/01/27 19:02:35 by doduwole          #+#    #+#             */
+/*   Updated: 2023/01/27 19:15:57 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_int(va_list args)
+int	ft_dtox(unsigned long n)
 {
-	int			val;
-	const char	*ptr;
+	char	*ptr;
+	int		len;
+	long	rem;
+	int		j;
 
-	val = va_arg(args, int);
-	ptr = (const char *)ft_itoa(val, 10);
-	return (ft_putstr((char *)ptr));
+	j = 0;
+	len = ft_nbrlen(n);
+	ptr = ft_calloc(len + 1, sizeof(char));
+	if (!ptr)
+		return ('\0');
+	while (n != 0)
+	{
+		rem = n % 16;
+		if (rem < 10)
+			ptr[j++] = 48 + rem;
+		else
+			ptr[j++] = 87 + rem;
+		n /= 16;
+	}
+		// while (ptr[j++])
+		// {
+		// 	printf("%c", ptr[j]);
+		// }
+	ft_strrev(ptr);
+	return (ft_putstr(ptr));
 }

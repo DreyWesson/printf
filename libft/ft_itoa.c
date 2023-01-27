@@ -6,28 +6,29 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:08:30 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 14:37:33 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:02:21 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_nbrlen(int n)
+void	lesser_num(int *n, char *ptr, int *len, int base)
 {
-	int	i;
-
-	i = 0;
-	if (n <= 0)
-		i = 1;
-	while (n)
+	if (*n == 0)
+		ptr[0] = '0';
+	if (*n < 0)
 	{
-		n /= 10;
-		++i;
+		ptr[0] = '-';
+		if (*n == -2147483648)
+		{
+			ptr[--(*len)] = '8';
+			*n /= base;
+		}
+		*n = -(*n);
 	}
-	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int n, int base)
 {
 	char	*ptr;
 	int		len;
@@ -36,22 +37,12 @@ char	*ft_itoa(int n)
 	ptr = ft_calloc(len + 1, sizeof(char));
 	if (!ptr)
 		return (NULL);
-	if (n == 0)
-		ptr[0] = '0';
-	if (n < 0)
-	{
-		ptr[0] = '-';
-		if (n == -2147483648)
-		{
-			ptr[--len] = '8';
-			n /= 10;
-		}
-		n = -n;
-	}
+	if (n <= 0)
+		lesser_num(&n, ptr, &len, base);
 	while (len-- && n != 0)
 	{
-		ptr[len] = (n % 10) + '0';
-		n /= 10;
+		ptr[len] = (n % base) + '0';
+		n /= base;
 	}
 	return (ptr);
 }
