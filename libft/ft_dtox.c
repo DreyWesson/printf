@@ -6,13 +6,13 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:02:35 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:42:53 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:20:27 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_dtox(unsigned long n)
+char	*ft_dtox(unsigned long n)
 {
 	char	*ptr;
 	int		len;
@@ -23,7 +23,7 @@ int	ft_dtox(unsigned long n)
 	len = ft_nbrlen(n);
 	ptr = ft_calloc(len + 1, sizeof(char));
 	if (!ptr)
-		return ('\0');
+		return (NULL);
 	while (n != 0)
 	{
 		rem = n % 16;
@@ -34,5 +34,5 @@ int	ft_dtox(unsigned long n)
 		n /= 16;
 	}
 	ft_strrev(ptr);
-	return (ft_putstr(ptr));
+	return (ptr);
 }

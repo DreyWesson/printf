@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:47:34 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:28:03 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:12:10 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_strrev(char *ptr);
-int		ft_dtox(unsigned long n);
+char	*ft_dtox(unsigned long n);
 int		ft_nbrlen(int n);
 /*
 ** UTIL FUNCTIONS

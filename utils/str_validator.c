@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:20:43 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:29:40 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:02:09 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 int	str_validator(const char *format)
 {
 	int		i;
-	char	c;
 	char	*str;
 
+	if (!format[0])
+		return ('\0');
 	i = 0;
 	str = "csidpuxX%";
-	while (format[++i] != '\0')
+	while (format[i] != '\0')
 	{
-		if (format == NULL)
-			return (-1);
 		if (format[i] == '%')
 		{
 			i++;
-			c = format[i];
-			if (c == '\0' || !ft_strchr(str, c))
-				return (-1);
+			if (format[i] == '\0' || !ft_strchr(str, format[i]))
+				return ('\0');
 		}
+		i++;
 	}
 	return (1);
 }

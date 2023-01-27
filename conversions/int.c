@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:02:20 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/26 19:17:36 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:21:40 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 int	convert_int(va_list args)
 {
 	int			val;
+	int			ret;
 	const char	*ptr;
 
+	ret = 0;
 	val = va_arg(args, int);
 	ptr = (const char *)ft_itoa(val, 10);
-	return (ft_putstr((char *)ptr));
+	ret += ft_putstr((char *)ptr);
+	return (ret);
 }

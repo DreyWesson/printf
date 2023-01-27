@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:47:24 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:37:34 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:21:24 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ int	convert_ptr(va_list args)
 {
 	unsigned long	ptr;
 	int				ret;
+	char			*c;
 
 	ret = 0;
 	ptr = va_arg(args, unsigned long);
 	if (!ptr)
 		return ('\0');
 	ret += ft_putstr("0x");
-	ret += ft_dtox(ptr);
+	c = ft_dtox(ptr);
+	ret += ft_putstr(c);
 	return (ret);
 }
