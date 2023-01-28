@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:19:18 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:09:08 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_converter(char val, va_list args)
 		i = convert_int(args);
 	if (val == 'p')
 		i = convert_ptr(args);
+	if (val == '%')
+		i = ft_putchar(&val);
 	return (i);
 }
