@@ -6,16 +6,18 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/28 15:09:08 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/30 20:22:14 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_converter(char val, va_list args)
+int	ft_converter(char val, va_list* args)
 {
 	int	i;
+	va_list copy;
 
+	va_copy(copy, *args);
 	i = 0;
 	if (val == 'c')
 		i = convert_char(args);

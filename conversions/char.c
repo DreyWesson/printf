@@ -6,16 +6,19 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 06:51:27 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/28 15:18:51 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/30 20:20:06 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_char(va_list args)
+int	convert_char(va_list* args)
 {
 	char	i;
+	va_list copy;
 
-	i = (char)va_arg(args, int);
+	va_copy(copy, *args);
+	i = (char)va_arg(*args, int);
+	// printf("%p\n", &i);
 	return (ft_putchar(&i));
 }
