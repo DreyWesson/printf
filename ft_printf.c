@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/30 21:30:40 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/31 06:47:37 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,15 @@ int	ft_printf(const char* format, ...)
 	return (ret);
 }
 
-int	main(void)
-{
-	// ft_printf("%c%c%c", 'a', '\t', 'b');
-	// printf("1->%d\n", ft_printf("%%\n")); // %p tester
-	// printf("2->%d\n", printf("%%\n")); // %p tester
-	printf("my len = %d\n", ft_printf("Hel%co %c\n", 'l', 'w')); // %c tester
-	return (0);
-}
+// int	main(void)
+// {
+// 	// ft_printf("%c%c%c", 'a', '\t', 'b');
+// 	// printf("1->%d\n", ft_printf("%%\n")); // %p tester
+// 	// printf("2->%d\n", printf("%%\n")); // %p tester
+// 	ft_printf("%s", (char*)NULL);
+// 	// printf("my len = %d\n", ft_printf("%s %s\n", "Hello", "world")); // %c tester
+// 	return (0);
+// }
 // printf("->%d %p\n", ft_printf("%p\n", &i), &i); // %p tester
 // printf("%d\n",ft_printf("hello %s\n","world")); //%s tester
 // printf("->%d\n", ft_printf("hello %d\n", 23456)); // %d/%i tester

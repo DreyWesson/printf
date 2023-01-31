@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:47:24 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/30 20:20:57 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/31 06:35:17 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	convert_ptr(va_list* args)
 	ret += ft_putstr("0x");
 	c = ft_dtox(ptr);
 	ret += ft_putstr(c);
+	free(c);
 	return (ret);
 }
