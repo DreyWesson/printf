@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   x.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 15:28:47 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/31 11:41:24 by doduwole         ###   ########.fr       */
+/*   Created: 2023/01/31 12:10:37 by doduwole          #+#    #+#             */
+/*   Updated: 2023/01/31 13:54:53 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putstr(char* str)
+int	convert_x(va_list* args, char val)
 {
-	int	ret;
-	int	i;
+	unsigned int	ptr;
+	int				ret;
+	va_list			copy;
+	char* c;
 
 	ret = 0;
-	i = -1;
-	while (str[++i])
-		ret += ft_putchar(str[i]);
+	va_copy(copy, *args);
+	ptr = va_arg(*args, unsigned int);
+	if (ptr == 0)
+		return ('\0');
+	c = ft_dtox(ptr, val);
+	ret += ft_putstr(c);
+	free(c);
 	return (ret);
 }

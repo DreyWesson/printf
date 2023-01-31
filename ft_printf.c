@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/31 06:47:37 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/31 13:15:41 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_printf(const char* format, ...)
 			ret += ft_converter(format[i], &args);
 		}
 		else
-			ret += ft_putchar(&format[i]);
+			ret += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
@@ -40,11 +40,16 @@ int	ft_printf(const char* format, ...)
 
 // int	main(void)
 // {
+// 	int i;
+
+// 	i = 42;
 // 	// ft_printf("%c%c%c", 'a', '\t', 'b');
 // 	// printf("1->%d\n", ft_printf("%%\n")); // %p tester
 // 	// printf("2->%d\n", printf("%%\n")); // %p tester
-// 	ft_printf("%s", (char*)NULL);
-// 	// printf("my len = %d\n", ft_printf("%s %s\n", "Hello", "world")); // %c tester
+// 	// ft_printf("%s", (char*)NULL);
+// 	// printf("my len = %d\n", ft_printf("%s %s\n", "Hello", "world"));
+// 	ft_printf(" %p \n", i);
+// 	// ft_printf(" %p %p \n", 0, 0);
 // 	return (0);
 // }
 // printf("->%d %p\n", ft_printf("%p\n", &i), &i); // %p tester

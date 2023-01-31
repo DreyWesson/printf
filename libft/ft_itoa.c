@@ -6,13 +6,13 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:08:30 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/27 19:02:21 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/31 08:20:29 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	lesser_num(int *n, char *ptr, int *len, int base)
+void	lesser_num(int* n, char* ptr, int* len, int base)
 {
 	if (*n == 0)
 		ptr[0] = '0';
@@ -28,13 +28,14 @@ void	lesser_num(int *n, char *ptr, int *len, int base)
 	}
 }
 
-char	*ft_itoa(int n, int base)
+char* ft_itoa(int n, int base)
 {
-	char	*ptr;
+	char* ptr;
 	int		len;
 
 	len = ft_nbrlen(n);
 	ptr = ft_calloc(len + 1, sizeof(char));
+	ptr[len] = '\0';
 	if (!ptr)
 		return (NULL);
 	if (n <= 0)
