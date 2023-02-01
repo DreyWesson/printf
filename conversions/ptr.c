@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 15:47:24 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/31 13:58:25 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:56:28 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	convert_ptr(va_list* args, char val)
 	va_copy(copy, *args);
 	ptr = va_arg(*args, unsigned long);
 	if (ptr == 0)
-		return ('\0');
+		return (ft_putchar('\0'));
 	ret += ft_putstr("0x");
 	c = ft_dtox(ptr, val);
 	ret += ft_putstr(c);

@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 14:08:30 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 17:14:44 by doduwole         ###   ########.fr       */
+/*   Created: 2023/02/01 17:20:08 by doduwole          #+#    #+#             */
+/*   Updated: 2023/02/01 18:43:35 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	lesser_num(int* n, char* ptr, int* len, int base)
-{
-	if (*n == 0)
-		ptr[0] = '0';
-	if (*n < 0)
-	{
-		ptr[0] = '-';
-		if (*n == -2147483648)
-		{
-			ptr[--(*len)] = '8';
-			*n /= base;
-		}
-		*n = -(*n);
-	}
-}
 
-char* ft_itoa(int n)
+char* ft_utoa(unsigned int n)
 {
 	char* ptr;
 	int		len;
 
-	len = ft_nbrlen(n);
+	len = ft_nbrlen_uns(n);
 	ptr = ft_calloc(len + 1, sizeof(char));
 	ptr[len] = '\0';
 	if (!ptr)
 		return (NULL);
-	if (n <= 0)
-		lesser_num(&n, ptr, &len, 10);
 	while (len-- && n != 0)
 	{
 		ptr[len] = (n % 10) + '0';

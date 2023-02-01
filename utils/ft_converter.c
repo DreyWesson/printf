@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/31 14:05:22 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:18:11 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_converter(char val, va_list* args)
 	if (val == 'x' || val == 'X')
 		i = convert_x(args, val);
 	if (val == 'u')
-		i = convert_u(args, val);
+		i = convert_u(args);
 	if (val == '%')
 		i = ft_putchar(val);
 	return (i);
