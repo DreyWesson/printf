@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/01/31 15:49:34 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:01:53 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ int	ft_printf(const char* format, ...)
 
 // int	main(void)
 // {
-// 	int i;
+// 	// int i;
 
-// 	i = 42;
+// 	// i = 42;
 // 	// ft_printf("%c%c%c", 'a', '\t', 'b');
 // 	// printf("1->%d\n", ft_printf("%%\n")); // %p tester
 // 	// printf("2->%d\n", printf("%%\n")); // %p tester
 // 	// ft_printf("%s", (char*)NULL);
 // 	// printf("my len = %d\n", ft_printf("%s %s\n", "Hello", "world"));
-// 	ft_printf(" %p \n", i);
+// 	ft_printf(" %u \n", 0);
 // 	// ft_printf(" %p %p \n", 0, 0);
 // 	return (0);
 // }
