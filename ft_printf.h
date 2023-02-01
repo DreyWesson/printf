@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:47:34 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 18:38:41 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:07:32 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		convert_char(va_list* args);
 int		convert_str(va_list* args);
 int		convert_int(va_list* args);
 int		convert_ptr(va_list* args, char val);
-int		convert_x(va_list* args, char val);
+int		convert_xX(va_list* args, char val);
 int		convert_u(va_list* args);
 int		is_valid_format(const char* format);
 /*

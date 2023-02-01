@@ -6,13 +6,13 @@
 #    By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 10:32:16 by doduwole          #+#    #+#              #
-#    Updated: 2023/02/01 18:40:11 by doduwole         ###   ########.fr        #
+#    Updated: 2023/02/01 21:07:47 by doduwole         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libftprintf.a
 
-SRCS			=	conversions/char.c conversions/str.c conversions/x.c	\
+SRCS			=	conversions/char.c conversions/str.c conversions/xX.c	\
 					conversions/int.c libft/ft_putchar.c libft/ft_itoa.c	\
 					libft/ft_strlen.c libft/ft_bzero.c libft/ft_calloc.c	\
 					libft/ft_putstr.c conversions/ptr.c libft/ft_strchr.c	\

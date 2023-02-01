@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   x.c                                                :+:      :+:    :+:   */
+/*   xX.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 12:10:37 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 21:05:04 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:07:01 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_x(va_list* args, char val)
+int	convert_xX(va_list* args, char val)
 {
 	unsigned int	ptr;
 	int				ret;
