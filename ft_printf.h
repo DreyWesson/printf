@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:47:34 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/02 12:03:51 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:05:26 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 
 int		ft_printf(const char *format, ...);
 /*
