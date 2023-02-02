@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   xX.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 14:24:42 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/02 11:55:37 by doduwole         ###   ########.fr       */
+/*   Created: 2023/01/31 12:10:37 by doduwole          #+#    #+#             */
+/*   Updated: 2023/02/02 11:55:01 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+int	convert_xes(va_list *args, char val)
 {
-	size_t	i;
+	unsigned int	ptr;
+	int				ret;
+	va_list			copy;
+	char			*c;
 
-	i = 0;
-	while (++i < n)
-		*(unsigned char *)(s + i) = 0;
+	ret = 0;
+	va_copy(copy, *args);
+	ptr = va_arg(*args, unsigned int);
+	if (ptr == 0)
+		return (ft_putchar('0'));
+	c = ft_dtox(ptr, val);
+	ret += ft_putstr(c);
+	free(c);
+	return (ret);
 }

@@ -6,13 +6,13 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:46:18 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/02 10:00:38 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:55:14 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char* format, ...)
+int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		ret;

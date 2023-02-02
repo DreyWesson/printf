@@ -6,16 +6,16 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 21:07:15 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:04:22 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_converter(char val, va_list* args)
+int	ft_converter(char val, va_list *args)
 {
-	int	i;
-	va_list copy;
+	int		i;
+	va_list	copy;
 
 	va_copy(copy, *args);
 	i = 0;
@@ -28,7 +28,7 @@ int	ft_converter(char val, va_list* args)
 	if (val == 'p')
 		i = convert_ptr(args, val);
 	if (val == 'x' || val == 'X')
-		i = convert_xX(args, val);
+		i = convert_xes(args, val);
 	if (val == 'u')
 		i = convert_u(args);
 	if (val == '%')

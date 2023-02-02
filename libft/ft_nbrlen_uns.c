@@ -6,7 +6,7 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:37:40 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 21:01:39 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:15:56 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_nbrlen_uns(unsigned int n)
 	int	i;
 
 	i = 0;
-	// if (n <= 0)
-	// 	i = 1;
+	if (n <= 0)
+		i = 1;
 	while (n)
 	{
 		n /= 10;

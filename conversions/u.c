@@ -6,18 +6,18 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:00:49 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/01 21:03:41 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/02 11:54:05 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	convert_u(va_list* args)
+int	convert_u(va_list *args)
 {
 	unsigned int	ptr;
 	int				ret;
 	va_list			copy;
-	char* c;
+	char			*c;
 
 	ret = 0;
 	va_copy(copy, *args);
