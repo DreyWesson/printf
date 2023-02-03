@@ -6,32 +6,30 @@
 /*   By: doduwole <doduwole@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 19:18:41 by doduwole          #+#    #+#             */
-/*   Updated: 2023/02/02 12:04:22 by doduwole         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:25:56 by doduwole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_converter(char val, va_list *args)
+int	ft_converter(char val, va_list* args)
 {
 	int		i;
-	va_list	copy;
 
-	va_copy(copy, *args);
 	i = 0;
 	if (val == 'c')
 		i = convert_char(args);
-	if (val == 's')
+	else if (val == 's')
 		i = convert_str(args);
-	if (val == 'i' || val == 'd')
+	else if (val == 'i' || val == 'd')
 		i = convert_int(args);
-	if (val == 'p')
+	else if (val == 'p')
 		i = convert_ptr(args, val);
-	if (val == 'x' || val == 'X')
+	else if (val == 'x' || val == 'X')
 		i = convert_xes(args, val);
-	if (val == 'u')
+	else if (val == 'u')
 		i = convert_u(args);
-	if (val == '%')
+	else if (val == '%')
 		i = ft_putchar(val);
 	return (i);
 }
